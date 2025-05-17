@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Landing Page</title>
+    <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Masala Magic Restaurant </h1>
+        <p>Experience the taste of perfection</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="login-signup">
+        <h2>Login</h2>
+        <div class="form-container">
+            <div class="login-box">
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-buttons">
+            <button onclick="showMenu('starters')">Starters</button>
+            <button onclick="showMenu('maincourse')">Main Course</button>
+            <button onclick="showMenu('desserts')">Desserts</button>
+        </div>
+        <div id="menu-content">
+            <p>Select a category to view our dishes.</p>
+        </div>
+    </section>
+
+    <section id="reservations">
+        <h2>Book a Table</h2>
+        <p>Reserve a table for a delightful dining experience. Choose your date, time, and party size.</p>
+        <form>
+            <input type="date" required>
+            <input type="time"placeholder="time" required>
+            <input type="number" placeholder="Number of Guests" required>
+            <button type="submit" class="reserve-btn">Reserve Now</button>
+        </form>
+    </section>
+
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p>"The best Indian food I've ever had! Highly recommended." - <strong>Rahul M.</strong></p>
+        </div>
+        <div class="review">
+            <p>"Amazing ambiance and delicious food. Will visit again!" - <strong>Ananya S.</strong></p>
+        </div>
+        <div class="review">
+            <p>"Excellent service and great flavors. A must-visit!" - <strong>Vikram T.</strong></p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Masala Magic Restaurant, we bring authentic Indian flavors to your plate, crafted with love and tradition. Our chefs use fresh ingredients and secret family recipes to create mouth-watering dishes that keep our guests coming back for more.</p>
+        <p>Our restaurant offers a cozy yet elegant ambiance, perfect for family dinners, romantic dates, or casual gatherings. We are committed to providing top-notch hospitality, ensuring every guest leaves with a smile.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Masala Magic Restaurant. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showMenu(category) {
+            let menuContent = document.getElementById("menu-content");
+            if (category === "starters") {
+                menuContent.innerHTML = `
+                    <div class="menu-item"><img src="images/tikka.jpg" alt="Paneer Tikka"><p>Paneer Tikka</p></div>
+                    <div class="menu-item"><img src="images/veg_manchurian.jpg" alt="Veg Manchurian"><p>Veg Manchurian</p></div>
+                `;
+            } else if (category === "maincourse") {
+                menuContent.innerHTML = `
+                    <div class="menu-item"><img src="images/butter_chicken.jpg" alt="Butter Chicken"><p>Butter Chicken</p></div>
+                    <div class="menu-item"><img src="images/paneer_butter_masala.jpg" alt="Paneer Butter Masala"><p>Paneer Butter Masala</p></div>
+                `;
+            } else if (category === "desserts") {
+                menuContent.innerHTML = `
+                    <div class="menu-item"><img src="images/gulab_jamun.jpg" alt="Gulab Jamun"><p>Gulab Jamun</p></div>
+                    <div class="menu-item"><img src="images/kulfi.jpg" alt="Kulfi"><p>Kulfi</p></div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
